@@ -1,0 +1,38 @@
+<controls:MetroWindow x:Class="Barebones.Pages.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Barebones.Pages"
+        xmlns:s="https://github.com/canton7/Stylet"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}" 
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="18"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance local:ShellViewModel}"
+        Title="Stylet Start Project"
+        Width="900" Height="350">
+    <StackPanel VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" Margin="0,20">Barebones project integrating Stylet, Autofac, FluentValidations, Mahapps and MaterialDesignInXaml</TextBlock>
+        <TextBox Text="{Binding Width, UpdateSourceTrigger=PropertyChanged}"
+                     Margin="200,0,0,0" 
+                     materialDesign:TextFieldAssist.Hint="Width"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                     HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding Height, UpdateSourceTrigger=PropertyChanged}"
+                     Margin="200,0,0,0" 
+                     materialDesign:TextFieldAssist.Hint="Height"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                     HorizontalAlignment="Left"></TextBox>
+        <StackPanel Margin="0,20" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Command="{s:Action ShowADialog}" VerticalAlignment="Center">ShowDialog</Button>
+        </StackPanel>
+    </StackPanel>
+</controls:MetroWindow>
